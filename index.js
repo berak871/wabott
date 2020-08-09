@@ -52,7 +52,7 @@ async function msgHandler (client, message) {
         const { pushname } = sender
         const { formattedTitle } = chat
         const time = moment(t * 1000).format('DD/MM HH:mm:ss')
-        const commands = ['/helep','/tiker', '/toktok', '/igr', '/twit', '/pesbuk','/quotes', '/bucin', 'assalamualaikm', 'P', 'thul', 'ngopi', ]
+        const commands = ['/helep','/tiker', '/toktok', '/igr', '/twit', '/pesbuk','/quotes', '/bucin', 'assalamualaikum', 'P', 'thul', 'ngopi', ]
         const cmds = commands.map(x => x + '\\b').join('|')
         const cmd = type === 'chat' ? body.match(new RegExp(cmds, 'gi')) : type === 'image' && caption ? caption.match(new RegExp(cmds, 'gi')) : ''
         const args = body.trim().split(' ')
@@ -178,7 +178,7 @@ async function msgHandler (client, message) {
                             });
                     }
                     break
-                case '#fesbuk':
+                case '/pesbuk':
                         if (args.length == 2) {
                             const url = args[1]
                             if (!url.match(isUrl) && !url.includes('facebook.com')) return client.sendText(from, 'maaf mint, url yang kamu kirim tidak valid')
